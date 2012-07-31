@@ -39,14 +39,14 @@ BOARD_KERNEL_BASE := 0x13600000
 BOARD_KERNEL_PAGESIZE := 4096 
 BOARD_PAGE_SIZE := 0x00001000
 BOARD_NAND_PAGE_SIZE := 4096 -s 128
-TARGET_PREBUILT_KERNEL := device/samsung/beni/kernel
+TARGET_PREBUILT_KERNEL := device/samsung/s5670/kernel
 
 # Graphic
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno200
 TARGET_LIBAGL_USE_GRALLOC_COPYBITS := true
 COPYBIT_MSM7K := true
 BOARD_USE_SCREENCAP:= true
-BOARD_EGL_CFG := device/samsung/beni/configs/egl.cfg
+BOARD_EGL_CFG := device/samsung/s5670/configs/egl.cfg
 
 # WiFi
 PRODUCT_WIRELESS_TOOLS := true
@@ -91,9 +91,9 @@ BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := beni
 BOARD_VENDOR_QCOM_GPS_LOC_API_AMSS_VERSION := 1240
 
 # Recovery
-TARGET_RECOVERY_INITRC := device/samsung/beni/recovery.rc
-TARGET_PREBUILT_RECOVERY_KERNEL := device/samsung/beni/recovery_kernel
-BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/samsung/beni/recovery/recovery_ui.c
+TARGET_RECOVERY_INITRC := device/samsung/s5670/recovery.rc
+TARGET_PREBUILT_RECOVERY_KERNEL := device/samsung/s5670/recovery_kernel
+BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/samsung/s5670/recovery/recovery_ui.c
 BOARD_BML_BOOT := "/dev/block/bml8"
 BOARD_BML_RECOVERY := "/dev/block/bml9"
 BOARD_RECOVERY_HANDLES_MOUNT := true

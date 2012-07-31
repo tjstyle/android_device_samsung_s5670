@@ -43,7 +43,7 @@ $(call inherit-product, build/target/product/full_base.mk)
 # The gps config appropriate for this device
 $(call inherit-product, device/common/gps/gps_us_supl.mk)
 
-DEVICE_PACKAGE_OVERLAYS := device/samsung/beni/overlay
+DEVICE_PACKAGE_OVERLAYS := device/samsung/s5670/overlay
 
 # HAL libs and other system binaries
 PRODUCT_PACKAGES += \
@@ -75,7 +75,7 @@ PRODUCT_PACKAGES += \
     FM
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
-	LOCAL_KERNEL := device/samsung/beni/kernel
+	LOCAL_KERNEL := device/samsung/s5670/kernel
 else
 	LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif
@@ -96,44 +96,44 @@ PRODUCT_COPY_FILES += \
 
 # Board-specific init
 PRODUCT_COPY_FILES += \
-    device/samsung/beni/ueventd.gt-s5670.rc:root/ueventd.gt-s5670.rc \
-    device/samsung/beni/prebuilt/fsr.ko:root/lib/modules/fsr.ko \
-    device/samsung/beni/prebuilt/fsr_stl.ko:root/lib/modules/fsr_stl.ko \
-    device/samsung/beni/prebuilt/rfs_fat.ko:root/lib/modules/rfs_fat.ko \
-    device/samsung/beni/prebuilt/rfs_glue.ko:root/lib/modules/rfs_glue.ko \
-    device/samsung/beni/prebuilt/sec_param.ko:root/lib/modules/sec_param.ko \
-    device/samsung/beni/BENI.rle:root/BENI.rle \
-    device/samsung/beni/init.gt-s5670.rc:root/init.gt-s5670.rc
+    device/samsung/s5670/ueventd.gt-s5670.rc:root/ueventd.gt-s5670.rc \
+    device/samsung/s5670/prebuilt/fsr.ko:root/lib/modules/fsr.ko \
+    device/samsung/s5670/prebuilt/fsr_stl.ko:root/lib/modules/fsr_stl.ko \
+    device/samsung/s5670/prebuilt/rfs_fat.ko:root/lib/modules/rfs_fat.ko \
+    device/samsung/s5670/prebuilt/rfs_glue.ko:root/lib/modules/rfs_glue.ko \
+    device/samsung/s5670/prebuilt/sec_param.ko:root/lib/modules/sec_param.ko \
+    device/samsung/s5670/BENI.rle:root/BENI.rle \
+    device/samsung/s5670/init.gt-s5670.rc:root/init.gt-s5670.rc
 
 ## Wifi Stuff
 PRODUCT_COPY_FILES += \
-    device/samsung/beni/configs/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
-    device/samsung/beni/configs/hostapd.conf:system/etc/wifi/hostapd.conf \
-    device/samsung/beni/prebuilt/get_macaddrs:system/bin/get_macaddrs \
-    device/samsung/beni/configs/dhcpcd.conf:system/etc/dhcpcd/dhcpcd.conf 
+    device/samsung/s5670/configs/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
+    device/samsung/s5670/configs/hostapd.conf:system/etc/wifi/hostapd.conf \
+    device/samsung/s5670/prebuilt/get_macaddrs:system/bin/get_macaddrs \
+    device/samsung/s5670/configs/dhcpcd.conf:system/etc/dhcpcd/dhcpcd.conf 
 
 ## Media
 PRODUCT_COPY_FILES += \
-    device/samsung/beni/configs/AutoVolumeControl.txt:system/etc/AutoVolumeControl.txt \
-    device/samsung/beni/configs/AudioFilter.csv:system/etc/AudioFilter.csv \
-    device/samsung/beni/configs/media_profiles.xml:system/etc/media_profiles.xml \
-    device/samsung/beni/configs/vold.fstab:system/etc/vold.fstab 
+    device/samsung/s5670/configs/AutoVolumeControl.txt:system/etc/AutoVolumeControl.txt \
+    device/samsung/s5670/configs/AudioFilter.csv:system/etc/AudioFilter.csv \
+    device/samsung/s5670/configs/media_profiles.xml:system/etc/media_profiles.xml \
+    device/samsung/s5670/configs/vold.fstab:system/etc/vold.fstab 
 
 ## Keymaps
 PRODUCT_COPY_FILES += \
-    device/samsung/beni/keys/sec_jack.kl:system/usr/keylayout/sec_jack.kl \
-    device/samsung/beni/keys/sec_touchscreen.kl:system/usr/keylayout/sec_touchscreen.kl \
-    device/samsung/beni/keys/sec_key.kl:system/usr/keylayout/sec_key.kl \
-    device/samsung/beni/keys/sec_key.kcm.bin:system/usr/keychars/sec_key.kcm.bin \
-    device/samsung/beni/keys/sec_touchscreen.kcm.bin:system/usr/keychars/sec_touchscreen.kcm.bin
+    device/samsung/s5670/keys/sec_jack.kl:system/usr/keylayout/sec_jack.kl \
+    device/samsung/s5670/keys/sec_touchscreen.kl:system/usr/keylayout/sec_touchscreen.kl \
+    device/samsung/s5670/keys/sec_key.kl:system/usr/keylayout/sec_key.kl \
+    device/samsung/s5670/keys/sec_key.kcm.bin:system/usr/keychars/sec_key.kcm.bin \
+    device/samsung/s5670/keys/sec_touchscreen.kcm.bin:system/usr/keychars/sec_touchscreen.kcm.bin
 
 ## Compcache
 PRODUCT_COPY_FILES += \
-    device/samsung/beni/prebuilt/lzo_compress.ko:root/lib/modules/lzo_compress.ko \
-    device/samsung/beni/prebuilt/lzo_decompress.ko:root/lib/modules/lzo_decompress.ko \
-    device/samsung/beni/prebuilt/ramzswap.ko:system/lib/modules/ramzswap.ko
+    device/samsung/s5670/prebuilt/lzo_compress.ko:root/lib/modules/lzo_compress.ko \
+    device/samsung/s5670/prebuilt/lzo_decompress.ko:root/lib/modules/lzo_decompress.ko \
+    device/samsung/s5670/prebuilt/ramzswap.ko:system/lib/modules/ramzswap.ko
 
-$(call inherit-product-if-exists, vendor/samsung/beni/beni-vendor.mk)
+$(call inherit-product-if-exists, vendor/samsung/s5670/s5670-vendor.mk)
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 PRODUCT_NAME := beni
